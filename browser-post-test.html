@@ -1,0 +1,16 @@
+<!doctype html><html><body><pre id="out">sending...</pre><script>
+(async () => {
+  const payload = {"form_type":"resource","conversion_type":"resource_download","conversion_asset":"resource_mental_load_guide","name":"TriadFit Brevo Diag","email":"triadfit.brevo.diag+1777761959797@example.com","phone":"","goal_key":"hormone_friendly_nutrition","goal_label":"Hormone friendly nutrition","educational_updates_opt_in":true,"page_path":"/resource-mental-load-guide.html","user_agent":"Codex browser-use brevo diagnostic","submitted_at":"2026-05-02T22:45:59.797Z"};
+  try {
+    const res = await fetch("https://script.google.com/macros/s/AKfycbwBT5MboshKNmYWOkIDsHY5uJ3FBnyWvcvs7oeCOdHRya1ACNEbV5P7OTkyz69EZAEvCA/exec", {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const text = await res.text();
+    document.getElementById('out').textContent = JSON.stringify({ status: res.status, payload, body: text }, null, 2);
+  } catch (err) {
+    document.getElementById('out').textContent = 'ERROR: ' + (err && err.message ? err.message : String(err));
+  }
+})();
+</script></body></html>
