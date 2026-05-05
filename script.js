@@ -115,7 +115,7 @@ function syncWebinarShell(form, state) {
   heading.textContent = "Register for the next live session";
   intro.textContent =
     "Fill in your details and we’ll send the webinar link directly to your inbox and phone.";
-  submitButton.textContent = "Register for free webinar";
+  submitButton.textContent = "Reserve your seat";
 }
 
 async function handleFormSubmit(form) {
