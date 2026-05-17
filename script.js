@@ -1,6 +1,14 @@
+const TRIADFIT_APP_ORIGIN_FALLBACK = "https://triad-q6ellhxxy-astinas-projects.vercel.app";
+
+function resolveTriadFitEndpointUrl_() {
+  if (typeof window !== "undefined" && window.location.protocol !== "file:") {
+    return `${window.location.origin}/api/submit`;
+  }
+  return `${TRIADFIT_APP_ORIGIN_FALLBACK}/api/submit`;
+}
+
 const TRIADFIT_CONFIG = {
-  endpointUrl:
-    "https://script.google.com/macros/s/AKfycbxnyFqShwWUPpoC2skS50rrxyIdanpQ6eY3UVtAIjMD3yFCWG5DV2bhG6ixT0FE0o04xA/exec",
+  endpointUrl: resolveTriadFitEndpointUrl_(),
   runtimeState: {
     webinarMode: "open",
     primaryRoutingEnabled: true,
@@ -112,9 +120,9 @@ function syncWebinarShell(form, state) {
     return;
   }
 
-  heading.textContent = "Register for the next live session";
+  heading.textContent = "First step to a lighter, more confident you.";
   intro.textContent =
-    "Fill in your details and we’ll send the webinar link directly to your inbox and phone.";
+    "A focused ₹99, 60-minute session to help you build a calmer, more consistent approach to weight loss and food habits.";
   submitButton.textContent = "Reserve your seat";
 }
 
